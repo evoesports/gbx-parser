@@ -9,7 +9,7 @@
             "email": "legacinskas@gmail.com"
         }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
 		"php": ">=7.1",
         "sabre/xml": "^2.1",
