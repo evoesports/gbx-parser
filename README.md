@@ -21,7 +21,7 @@ $map = Parser::parse('./path/to/file.gbx');
 echo $map->getName();
 ```
 # Documentation 
-The full documentation is available in the `/docs` folder. A web browser is required to view it locally.
+The full documentation is available [here](https://eslkem.github.io/gbx-parser/).
 
 # Testing
 This package is tested using PHPUnit. To run the tests, simply execute `$ ./vendor/bin/phpunit`.
