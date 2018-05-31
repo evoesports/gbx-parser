@@ -3,7 +3,7 @@ This component is written to parse Maniaplanet engine's produced GBX Map files a
 **Note:** this package requires  a 64-bit PHP installation to function properly.
 
 # Installation
-Just run `$ composer require 'eslkem/gbx-parser'` or add `"eslkem/gbx-parser": "^1.0` line to your composer.json file followed by a `$ composer install` or `$composer update` command.
+Just run `$ composer require eslkem/gbx-parser` or add `"eslkem/gbx-parser": "^1.0"` line to your composer.json file followed by a `$ composer install` or `$composer update` command.
 
 # Setup and usage
  Using the package is straight forward: do not forget to include 
