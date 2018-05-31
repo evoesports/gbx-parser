@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/ESLKem.html">\ESLKem</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-764571252"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-764571252" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-704938755"></a>
+                                <a href="../namespaces/ESLKem.html" style="margin-left: 30px; padding-left: 0">ESLKem</a>
+            </div>
+            <div id="namespace-704938755" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1042583484"></a>
+                                <a href="../namespaces/ESLKem.GBXParser.html" style="margin-left: 30px; padding-left: 0">GBXParser</a>
+            </div>
+            <div id="namespace-1042583484" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-394646661"></a>
+                                <a href="../namespaces/ESLKem.GBXParser.Models.html" style="margin-left: 30px; padding-left: 0">Models</a>
+            </div>
+            <div id="namespace-394646661" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/ESLKem.GBXParser.Models.Decoration.html">Decoration</a></li>
+                                                    <li class="class"><a href="../classes/ESLKem.GBXParser.Models.Environment.html">Environment</a></li>
+                                                    <li class="class"><a href="../classes/ESLKem.GBXParser.Models.GBX.html">GBX</a></li>
+                                                    <li class="class"><a href="../classes/ESLKem.GBXParser.Models.Map.html">Map</a></li>
+                                                    <li class="class"><a href="../classes/ESLKem.GBXParser.Models.Mode.html">Mode</a></li>
+                                                    <li class="class"><a href="../classes/ESLKem.GBXParser.Models.Mood.html">Mood</a></li>
+                                                    <li class="class"><a href="../classes/ESLKem.GBXParser.Models.Type.html">Type</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/ESLKem.GBXParser.Parser.html">Parser</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/ESLKem.GBXParser.Models.html">\ESLKem\GBXParser\Models</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\ESLKem\GBXParser\Models</small>Map</h1>
+                    <p><em>The Map class derived from GBX parent and representing the Map/Track type.</em></p>
+                    <p>@author Aleksas Legačinskas</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.GBX.html#method_getVersion" class="">getVersion()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getSoftwareVersion" class="">getSoftwareVersion()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getUid" class="">getUid()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getEnvironment" class="">getEnvironment()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getAuthor" class="">getAuthor()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getAuthorName" class="">getAuthorName()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getAuthorZone" class="">getAuthorZone()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getName" class="">getName()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getMode" class="">getMode()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getMood" class="">getMood()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getDecoration" class="">getDecoration()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getDecorationAuthor" class="">getDecorationAuthor()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getLightmapCacheUID" class="">getLightmapCacheUID()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getLightmapVersion" class="">getLightmapVersion()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getTitlePack" class="">getTitlePack()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getBronzeTime" class="">getBronzeTime()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getSilverTime" class="">getSilverTime()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getGoldTime" class="">getGoldTime()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getAuthorTime" class="">getAuthorTime()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getDisplayCost" class="">getDisplayCost()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getMultilap" class="">getMultilap()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getmapType" class="">getmapType()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getAuthorScore" class="">getAuthorScore()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getSimpleEditor" class="">getSimpleEditor()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getContainsGhostBlocks" class="">getContainsGhostBlocks()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getCheckpoints" class="">getCheckpoints()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getLaps" class="">getLaps()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getThumbnail" class="">getThumbnail()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getComments" class="">getComments()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getDependencies" class="">getDependencies()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getMod" class="">getMod()</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#method_getPasswordProtected" class="">getPasswordProtected()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.GBX.html#property_version" class="">$version</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_softwareVersion" class="">$softwareVersion</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_uid" class="">$uid</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_environment" class="">$environment</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_author" class="">$author</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_authorName" class="">$authorName</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_authorZone" class="">$authorZone</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_name" class="">$name</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_mode" class="">$mode</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_mood" class="">$mood</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_decoration" class="">$decoration</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_decorationAuthor" class="">$decorationAuthor</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_lightmapCacheUID" class="">$lightmapCacheUID</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_lightmapVersion" class="">$lightmapVersion</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_titlePack" class="">$titlePack</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_bronzeTime" class="">$bronzeTime</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_silverTime" class="">$silverTime</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_goldTime" class="">$goldTime</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_authorTime" class="">$authorTime</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_displayCost" class="">$displayCost</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_multilap" class="">$multilap</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_mapType" class="">$mapType</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_authorScore" class="">$authorScore</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_simpleEditor" class="">$simpleEditor</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_containsGhostBlocks" class="">$containsGhostBlocks</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_checkpoints" class="">$checkpoints</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_laps" class="">$laps</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_thumbnail" class="">$thumbnail</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_comments" class="">$comments</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_dependencies" class="">$dependencies</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_mod" class="">$mod</a><br />
+                                                                    <a href="../classes/ESLKem.GBXParser.Models.Map.html#property_passwordProtected" class="">$passwordProtected</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/models.Map.html"><div class="path-wrapper">models\Map.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper"><a href="../classes/ESLKem.GBXParser.Models.GBX.html">\ESLKem\GBXParser\Models\GBX</a></div>
+                                                                                                    <div class="namespace-wrapper">\ESLKem\GBXParser\Models\Map</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_version" name="property_version" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$version</h3>
+                <pre class="signature">$version : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The version of the GBX format                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/ESLKem.GBXParser.Models.GBX.html"><div class="path-wrapper">\ESLKem\GBXParser\Models\GBX</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_softwareVersion" name="property_softwareVersion" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$softwareVersion</h3>
+                <pre class="signature">$softwareVersion : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The software version which was used to create the file                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_uid" name="property_uid" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$uid</h3>
+                <pre class="signature">$uid : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The unique id for the map object                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_environment" name="property_environment" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$environment</h3>
+                <pre class="signature">$environment : \ESLKem\GBXParser\Models\Environment</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/ESLKem.GBXParser.Models.Environment.html">\ESLKem\GBXParser\Models\Environment</a>
+                &mdash; The environment of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_author" name="property_author" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$author</h3>
+                <pre class="signature">$author : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The author login of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_authorName" name="property_authorName" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$authorName</h3>
+                <pre class="signature">$authorName : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The author (nick)name of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_authorZone" name="property_authorZone" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$authorZone</h3>
+                <pre class="signature">$authorZone : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The zone of the author in the form (World|[Continent]|[Country]|[Optional-Regions...])                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_name" name="property_name" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$name</h3>
+                <pre class="signature">$name : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The name of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_mode" name="property_mode" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$mode</h3>
+                <pre class="signature">$mode : \ESLKem\GBXParser\Models\Mode</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/ESLKem.GBXParser.Models.Mode.html">\ESLKem\GBXParser\Models\Mode</a>
+                &mdash; The mode of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_mood" name="property_mood" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$mood</h3>
+                <pre class="signature">$mood : \ESLKem\GBXParser\Models\Mood</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/ESLKem.GBXParser.Models.Mood.html">\ESLKem\GBXParser\Models\Mood</a>
+                &mdash; The mood of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_decoration" name="property_decoration" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$decoration</h3>
+                <pre class="signature">$decoration : \ESLKem\GBXParser\Models\Decoration</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/ESLKem.GBXParser.Models.Decoration.html">\ESLKem\GBXParser\Models\Decoration</a>
+                &mdash; The decoration of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_decorationAuthor" name="property_decorationAuthor" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$decorationAuthor</h3>
+                <pre class="signature">$decorationAuthor : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The author, who made the decoration of the map (usually Nadeo)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_lightmapCacheUID" name="property_lightmapCacheUID" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$lightmapCacheUID</h3>
+                <pre class="signature">$lightmapCacheUID : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The unique id used for identifying lightmaps in the cache                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_lightmapVersion" name="property_lightmapVersion" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$lightmapVersion</h3>
+                <pre class="signature">$lightmapVersion : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The version of the lightmap                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_titlePack" name="property_titlePack" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$titlePack</h3>
+                <pre class="signature">$titlePack : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; Optional titlepack used in making the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_bronzeTime" name="property_bronzeTime" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$bronzeTime</h3>
+                <pre class="signature">$bronzeTime : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The bronze medal time in miliseconds                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_silverTime" name="property_silverTime" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$silverTime</h3>
+                <pre class="signature">$silverTime : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The silver medal time in miliseconds                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_goldTime" name="property_goldTime" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$goldTime</h3>
+                <pre class="signature">$goldTime : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The gold medal time in miliseconds                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_authorTime" name="property_authorTime" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$authorTime</h3>
+                <pre class="signature">$authorTime : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The author medal time in miliseconds                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_displayCost" name="property_displayCost" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$displayCost</h3>
+                <pre class="signature">$displayCost : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The display cost (earlier - CCs or coppers) of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_multilap" name="property_multilap" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$multilap</h3>
+                <pre class="signature">$multilap : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                &mdash; Is the map multilap                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_mapType" name="property_mapType" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$mapType</h3>
+                <pre class="signature">$mapType : \ESLKem\GBXParser\Models\Type</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/ESLKem.GBXParser.Models.Type.html">\ESLKem\GBXParser\Models\Type</a>
+                &mdash; The type of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_authorScore" name="property_authorScore" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$authorScore</h3>
+                <pre class="signature">$authorScore : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The author score of the map, usually matches $authorTime                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_simpleEditor" name="property_simpleEditor" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$simpleEditor</h3>
+                <pre class="signature">$simpleEditor : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                &mdash; Was simple editor used in the making of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_containsGhostBlocks" name="property_containsGhostBlocks" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$containsGhostBlocks</h3>
+                <pre class="signature">$containsGhostBlocks : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                &mdash; Are ghost blocks present in the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_checkpoints" name="property_checkpoints" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$checkpoints</h3>
+                <pre class="signature">$checkpoints : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The number of checkopoints in the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_laps" name="property_laps" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$laps</h3>
+                <pre class="signature">$laps : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; The number of laps to complete to finish the map in non-timeattack modes                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_thumbnail" name="property_thumbnail" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$thumbnail</h3>
+                <pre class="signature">$thumbnail : \Intervention\Image\Image</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \Intervention\Image\Image
+                &mdash; The Image object representing the thumbnail of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="http://image.intervention.io"><span class="namespace-wrapper">Documentation for the package</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_comments" name="property_comments" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$comments</h3>
+                <pre class="signature">$comments : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The author comments for the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_dependencies" name="property_dependencies" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$dependencies</h3>
+                <pre class="signature">$dependencies : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; The dependency array containing names/links for the external items                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_mod" name="property_mod" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$mod</h3>
+                <pre class="signature">$mod : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; The optional mod name used in making of the map                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_passwordProtected" name="property_passwordProtected" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$passwordProtected</h3>
+                <pre class="signature">$passwordProtected : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                &mdash; Is the map password-protected                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(integer  <span class="argument">$version</span>, array  <span class="argument">$properties</span>) </pre>
+                <p><em>Constructor method</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$version </td>
+                                <td><p>The version of the GBX file</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$properties </td>
+                                <td><p>Associative array for the map properties. The keys must match object property names</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getVersion" name="method_getVersion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getVersion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getVersion() : integer</pre>
+                <p><em>Version getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The GBX version property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/ESLKem.GBXParser.Models.GBX.html"><div class="path-wrapper">\ESLKem\GBXParser\Models\GBX</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSoftwareVersion" name="method_getSoftwareVersion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSoftwareVersion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSoftwareVersion() : string</pre>
+                <p><em>SoftwareVersion getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The software version property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUid" name="method_getUid" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getUid()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUid() : string</pre>
+                <p><em>Uid getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The uid property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getEnvironment" name="method_getEnvironment" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getEnvironment()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getEnvironment() : \ESLKem\GBXParser\Models\Environment</pre>
+                <p><em>Environment getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/ESLKem.GBXParser.Models.Environment.html">\ESLKem\GBXParser\Models\Environment</a>
+                                            &mdash; <p>The environment property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAuthor" name="method_getAuthor" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAuthor()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAuthor() : string</pre>
+                <p><em>Author getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The author property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAuthorName" name="method_getAuthorName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAuthorName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAuthorName() : string</pre>
+                <p><em>AuthorName getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The authorName property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAuthorZone" name="method_getAuthorZone" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAuthorZone()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAuthorZone() : string</pre>
+                <p><em>AuthorZone getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The authorZone property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getName" name="method_getName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getName() : string</pre>
+                <p><em>Name getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The name property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMode" name="method_getMode" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMode()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMode() : \ESLKem\GBXParser\Models\Mode</pre>
+                <p><em>Mode getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/ESLKem.GBXParser.Models.Mode.html">\ESLKem\GBXParser\Models\Mode</a>
+                                            &mdash; <p>The mode property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMood" name="method_getMood" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMood()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMood() : \ESLKem\GBXParser\Models\Mood</pre>
+                <p><em>Mood getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/ESLKem.GBXParser.Models.Mood.html">\ESLKem\GBXParser\Models\Mood</a>
+                                            &mdash; <p>The mood property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDecoration" name="method_getDecoration" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDecoration()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDecoration() : \ESLKem\GBXParser\Models\Decoration</pre>
+                <p><em>Decoration getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/ESLKem.GBXParser.Models.Decoration.html">\ESLKem\GBXParser\Models\Decoration</a>
+                                            &mdash; <p>The decoration property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDecorationAuthor" name="method_getDecorationAuthor" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDecorationAuthor()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDecorationAuthor() : string</pre>
+                <p><em>DecorationAuthor getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The decorationAuthor property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLightmapCacheUID" name="method_getLightmapCacheUID" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLightmapCacheUID()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLightmapCacheUID() : integer</pre>
+                <p><em>LightmapCacheUID getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The lightmapCacheUID property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLightmapVersion" name="method_getLightmapVersion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLightmapVersion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLightmapVersion() : integer</pre>
+                <p><em>LightmapVersion getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The lightmapVersion property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTitlePack" name="method_getTitlePack" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTitlePack()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTitlePack() : string</pre>
+                <p><em>TitlePack getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The titlePack property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBronzeTime" name="method_getBronzeTime" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBronzeTime()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBronzeTime() : integer</pre>
+                <p><em>BronzeTime getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The bronzeTime property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSilverTime" name="method_getSilverTime" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSilverTime()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSilverTime() : integer</pre>
+                <p><em>SilverTime getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The silverTime property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getGoldTime" name="method_getGoldTime" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getGoldTime()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getGoldTime() : integer</pre>
+                <p><em>GoldTime getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The goldTime property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAuthorTime" name="method_getAuthorTime" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAuthorTime()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAuthorTime() : integer</pre>
+                <p><em>AuthorTime getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The authorTime property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDisplayCost" name="method_getDisplayCost" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDisplayCost()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDisplayCost() : integer</pre>
+                <p><em>DisplayCost getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The displayCost property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMultilap" name="method_getMultilap" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMultilap()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMultilap() : boolean</pre>
+                <p><em>Multilap getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>The multilap property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getmapType" name="method_getmapType" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getmapType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getmapType() : \ESLKem\GBXParser\Models\Type</pre>
+                <p><em>MapType getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/ESLKem.GBXParser.Models.Type.html">\ESLKem\GBXParser\Models\Type</a>
+                                            &mdash; <p>The mapType property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAuthorScore" name="method_getAuthorScore" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAuthorScore()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAuthorScore() : integer</pre>
+                <p><em>AuthorScore getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The authorScore property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSimpleEditor" name="method_getSimpleEditor" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSimpleEditor()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSimpleEditor() : boolean</pre>
+                <p><em>SimpleEditor getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>The simpleEditor property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getContainsGhostBlocks" name="method_getContainsGhostBlocks" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getContainsGhostBlocks()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getContainsGhostBlocks() : boolean</pre>
+                <p><em>ContainsGhostBlocks getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>The containsGhostBlocks property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCheckpoints" name="method_getCheckpoints" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCheckpoints()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCheckpoints() : integer</pre>
+                <p><em>Checkpoints getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The checkpoints property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLaps" name="method_getLaps" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLaps()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLaps() : integer</pre>
+                <p><em>Laps getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>The laps property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getThumbnail" name="method_getThumbnail" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getThumbnail()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getThumbnail() : \Intervention\Image\Image</pre>
+                <p><em>Thumbnail getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \Intervention\Image\Image
+                                            &mdash; <p>The thumbnail property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getComments" name="method_getComments" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getComments()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getComments() : string</pre>
+                <p><em>Comments getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The comments property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDependencies" name="method_getDependencies" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDependencies()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDependencies() : array</pre>
+                <p><em>Dependencies getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>The dependencies property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMod" name="method_getMod" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMod()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMod() : string</pre>
+                <p><em>Mod getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The mod property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPasswordProtected" name="method_getPasswordProtected" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPasswordProtected()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPasswordProtected() : boolean</pre>
+                <p><em>PasswordProtected getter method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>The passwordProtected property</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Map.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/models\Map.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/ESLKem.html">\ESLKem</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 23rd, 2018 at 11:00.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
