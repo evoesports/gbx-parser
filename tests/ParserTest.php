@@ -8,8 +8,9 @@
 *
 *  @author Aleksas Legačinskas
 */
-use PHPUnit\Framework\TestCase;
+namespace ESLKem\GBXParser\Tests;
 
+use PHPUnit\Framework\TestCase;
 use ESLKem\GBXParser\Parser;
 use ESLKem\GBXParser\Models\Map;
 use ESLKem\GBXParser\Models\GBX;
@@ -18,10 +19,9 @@ use ESLKem\GBXParser\Models\Mode;
 use ESLKem\GBXParser\Models\Decoration;
 use ESLKem\GBXParser\Models\Environment;
 use ESLKem\GBXParser\Models\Mood;
-
 use Intervention\Image\ImageManagerStatic as Image;
 
-class YourClassTest extends TestCase
+class ParserTest extends TestCase
 {
 
     private $mapFilename = __DIR__ . '/spmWeekly - Christmas Chrisis..Map.Gbx';
