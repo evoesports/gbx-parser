@@ -33,7 +33,7 @@ class Parser
     *
     * @return GBX A GBX (or any subclass) object contaning the parsed information 
     */
-    public static function parse(string $filename) : GBX {
+    public static function parse(string $filename) : ?GBX {
         
         $fileHandle = fopen($filename, 'rb');
 
@@ -511,9 +511,9 @@ class Parser
     *
     * @param resource $handle A stream for the opened file
     * @param array $lookbackStrings A reference to the lookbackstring array used for the chunk being read 
-    * @return string The read string
+    * @return string|null The read string
     */
-    private static function fetchLookbackString($handle, array &$lookbackStrings) : string {
+    private static function fetchLookbackString($handle, array &$lookbackStrings) : ?string {
         $index = self::fetchUInt32($handle);
         if(($index & 0xc0000000) === 0){
             $realIndex = $index & 0x3fffffff;
@@ -532,6 +532,8 @@ class Parser
                 return $lookbackStrings[$realIndex - 1];
             }
         }
+
+        return null;
     }
 
     /**
