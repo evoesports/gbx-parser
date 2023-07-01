@@ -11,9 +11,10 @@ Just run `$ composer require eslkem/gbx-parser` or add `"eslkem/gbx-parser": "^1
 require_once __DIR__.'/vendor/autoload.php';
  ```
 and use the following classes:
+
 ```php
-use ESLKem\GBXParser\Parser;
-use ESLKem\GBXParser\Models\Map;
+
+
 ```
 Sample usage:
 ```php
